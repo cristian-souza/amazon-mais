@@ -36,12 +36,12 @@
         <div class="slogan-text">Manacapuru Confia!</div>
       </div>
       <nav class="navigation">
-        <div class="menu-toggle" aria-label="Abrir menu">
+        <div class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-list">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <ul>
+        <ul id="menu-list">
           <li><a href="#" aria-label="Página inicial">Home</a></li>
           <li><a href="#" aria-label="Nossos planos">Planos</a></li>
           <li><a href="#" aria-label="Sobre nós">Sobre Nós</a></li>
@@ -58,89 +58,99 @@
 
       <section class="plans">
         <h2 class="plan-title">Internet + Diversão</h2>
-        <div class="plan-cards-container">
-          <div class="plan-card">
-            <div class="plan-header">
-              <h2>MUSIC</h2>
-              <img
-                class="plan-icon"
-                src="src/images/onda-sonora.png"
-                alt="Música"
-              />
-            </div>
-            <div class="plan-body">
-              <p>Internet Residencial</p>
-              <p class="speed">900</p>
-              <span>MEGA</span>
-              <p class="price">R$ 129,90*</p>
-              <div class="group-streams">
+        <div class="carousel-viewport">
+          <div class="plan-cards-container">
+            <div class="plan-card">
+              <div class="plan-header">
+                <h2>MUSIC</h2>
                 <img
-                  class="deezer-btn"
-                  src="src/images/deezer-fogo.svg"
-                  alt="Assine Deezer"
+                  class="plan-icon"
+                  src="src/images/onda-sonora.png"
+                  alt="Música"
                 />
               </div>
+              <div class="plan-body">
+                <p>Internet Residencial</p>
+                <p class="speed">900</p>
+                <span>MEGA</span>
+                <p class="price">R$ 129,90*</p>
+                <div class="group-streams">
+                  <img
+                    class="stream-btn deezer-btn"
+                    src="src/images/deezer-fogo.svg"
+                    alt="Assine Deezer"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="plan-card">
-            <div class="plan-header">
-              <h2>PIPOCA</h2>
-              <img class="plan-icon" src="src/images/pipoca.png" alt="Pipoca" />
-            </div>
-            <div class="plan-body">
-              <p>Internet Residencial</p>
-              <p class="speed">900</p>
-              <span>MEGA</span>
-              <p class="price">R$ 144,90*</p>
-              <div class="group-streams">
+            <div class="plan-card">
+              <div class="plan-header">
+                <h2>PIPOCA</h2>
                 <img
-                  class="deezer-btn"
-                  src="src/images/deezer-fogo.svg"
-                  alt="Assine Deezer"
-                />
-                <img
-                  class="hbo-btn"
-                  src="src/images/max-logo.svg"
-                  alt="Assine HBO Max"
+                  class="plan-icon"
+                  src="src/images/pipoca.png"
+                  alt="Pipoca"
                 />
               </div>
+              <div class="plan-body">
+                <p>Internet Residencial</p>
+                <p class="speed">900</p>
+                <span>MEGA</span>
+                <p class="price">R$ 144,90*</p>
+                <div class="group-streams">
+                  <img
+                    class="stream-btn deezer-btn"
+                    src="src/images/deezer-fogo.svg"
+                    alt="Assine Deezer"
+                  />
+                  <img
+                    class="stream-btn hbo-btn"
+                    src="src/images/max-logo.svg"
+                    alt="Assine HBO Max"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="plan-card">
-            <div class="plan-header">
-              <h2>CINEMA</h2>
-              <img
-                class="plan-icon"
-                src="src/images/projetor-de-filme.png"
-                alt="Cinema"
-              />
-            </div>
-            <div class="plan-body">
-              <p>Internet Residencial</p>
-              <p class="speed">900</p>
-              <span>MEGA</span>
-              <p class="price">R$ 159,90*</p>
-              <div class="group-streams">
+            <div class="plan-card">
+              <div class="plan-header">
+                <h2>CINEMA</h2>
                 <img
-                  class="deezer-btn"
-                  src="src/images/deezer-fogo.svg"
-                  alt="Assine Deezer"
+                  class="plan-icon"
+                  src="src/images/projetor-de-filme.png"
+                  alt="Cinema"
                 />
-                <img
-                  class="hbo-btn"
-                  src="src/images/max-logo.svg"
-                  alt="Assine HBO Max"
-                />
-                <img
-                  class="disney-btn"
-                  src="src/images/disney-plus-logo.svg"
-                  alt="Assine Disney+"
-                />
+              </div>
+              <div class="plan-body">
+                <p>Internet Residencial</p>
+                <p class="speed">900</p>
+                <span>MEGA</span>
+                <p class="price">R$ 159,90*</p>
+                <div class="group-streams">
+                  <img
+                    class="stream-btn deezer-btn"
+                    src="src/images/deezer-fogo.svg"
+                    alt="Assine Deezer"
+                  />
+                  <img
+                    class="stream-btn hbo-btn"
+                    src="src/images/max-logo.svg"
+                    alt="Assine HBO Max"
+                  />
+                  <img
+                    class="stream-btn disney-btn"
+                    src="src/images/disney-plus-logo.svg"
+                    alt="Assine Disney+"
+                  />
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="carousel-buttons">
+          <button class="carousel-btn prev-btn" aria-label="Plano anterior">&lt;</button>
+          <button class="carousel-btn next-btn" aria-label="Próximo plano">&gt;</button>
         </div>
 
         <p>*Consulte nossas condições de contratação</p>
@@ -151,9 +161,9 @@
       <div class="footer-top">
         <div class="social-media">
           <ul>
-            <li><i class="fa-brands fa-square-instagram"></i></li>
-            <li><i class="fa-brands fa-square-facebook"></i></li>
-            <li><i class="fa-brands fa-square-whatsapp"></i></li>
+            <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="#" aria-label="Whatsapp"><i class="fa-brands fa-square-whatsapp"></i></a></li>
           </ul>
         </div>
       </div>
@@ -163,5 +173,6 @@
       </div>
       <p>&copy; 2025 Amazon Mais. Todos os direitos reservados.</p>
     </footer>
+    <script src="src/js/carousel.js" defer></script>
   </body>
 </html>

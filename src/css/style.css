@@ -41,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Header CSS */
@@ -56,8 +57,6 @@ body {
 .logo-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  display: flex;
   align-items: center;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -152,15 +151,29 @@ body {
   flex-grow: 1;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .hero h1 {
   font-size: 38px;
   color: var(--preto-texto);
   margin-bottom: 10px;
+  animation: pulse 3s infinite ease-in-out;
 }
 
 .hero p {
   font-size: 24px;
   color: var(--preto-texto);
+  animation: pulse 3s infinite ease-in-out;
 }
 
 .plans {
@@ -173,6 +186,7 @@ body {
 .plans .plan-title {
   font-weight: bold;
   color: var(--preto-texto);
+  animation: pulse 3s infinite ease-in-out;
 }
 
 .plans h2 {
@@ -180,20 +194,31 @@ body {
   color: var(--preto-texto);
 }
 
+.carousel-viewport {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  width: 300px; /* Largura de um card */
+  margin: 0 auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 .plan-cards-container {
   display: flex;
-  justify-content: center;
   gap: 15px;
-  flex-wrap: wrap;
-  width: 100%;
 }
 
 .plan-card {
+  scroll-snap-align: center;
   background-color: var(--branco-fundo);
   border-radius: 10px;
   padding: 15px;
-  max-width: 300px;
-  flex-grow: 1;
+  width: 300px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -269,30 +294,29 @@ body {
 }
 
 .group-streams {
-  max-width: 300px;
-  margin-top: auto;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
 
-.deezer-btn {
-  background-color: var(--roxo);
+.stream-btn {
   height: 70px;
   width: 70px;
+  flex-shrink: 0;
+}
+
+.deezer-btn {
+  background-color: var(--roxo);
 }
 
 .hbo-btn {
   background-color: var(--azul-hbo-max);
-  height: 70px;
-  width: 70px;
 }
 
 .disney-btn {
   background-color: var(--azul-disney-plus);
-  height: 70px;
-  width: 70px;
 }
 
 .btn:hover {
@@ -302,6 +326,27 @@ body {
 .info-cond {
   font-size: 89px;
   color: var(--preto-texto);
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.carousel-btn {
+  background-color: var(--roxo);
+  color: var(--branco-fundo);
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carousel-btn:hover {
+  background-color: var(--verde-mega);
 }
 
 
@@ -340,9 +385,13 @@ body {
   gap: 10px;
 }
 
+.social-media a {
+  color: var(--branco-fundo);
+  text-decoration: none;
+}
+
 .social-media i {
   font-size: 32px;
-  color: var(--branco-fundo);
   transition: color 0.3s ease;
 }
 
@@ -435,8 +484,8 @@ body {
   }
 
   .plan-cards-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   .plan-card {
@@ -495,7 +544,7 @@ body {
   }
 
   .group-streams {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .social-media i {
