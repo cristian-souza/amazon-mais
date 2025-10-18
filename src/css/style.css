@@ -97,6 +97,26 @@ body {
   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); /* Sombra branca mais suave para o slogan */
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--branco-fundo);
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
 .navigation ul {
   display: flex;
   gap: 15px;
@@ -303,6 +323,7 @@ body {
   width: 100%;
   margin-bottom: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .social-media {
@@ -346,4 +367,138 @@ body {
 .footer > p {
   text-align: center;
   font-size: 12px;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-container {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .main-text {
+    font-size: 28px;
+  }
+
+  .slogan-text {
+    font-size: 14px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    order: 0;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+
+  .navigation {
+    order: 2;
+    width: 100%;
+  }
+
+  .navigation ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navigation.active ul {
+    display: flex;
+  }
+
+  .navigation a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .plans h2 {
+    font-size: 26px;
+  }
+
+  .plan-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card {
+    width: 300px;
+    max-width: 290px;
+  }
+
+  .plan-body {
+    width: 100%;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-media {
+    order: 1;
+  }
+
+  .address {
+    position: static;
+    transform: none;
+    order: 2;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .main-text {
+    font-size: 24px;
+  }
+
+  .slogan-text {
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .plan-header h2 {
+    font-size: 24px;
+  }
+
+  .plan-body .speed {
+    font-size: 28px;
+  }
+
+  .group-streams {
+    flex-wrap: wrap;
+  }
+
+  .social-media i {
+    font-size: 24px;
+  }
 }
