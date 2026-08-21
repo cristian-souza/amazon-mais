@@ -8,13 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  const CARD_GAP = 24; // deve bater com o "gap" de .plan-cards-container no CSS
   let currentIndex = 0;
   const totalCards = cards.length;
-  let cardWidth = cards[0].offsetWidth + 15; // card width + gap
+  let cardWidth = cards[0].offsetWidth + CARD_GAP;
   let autoPlayInterval;
 
   const updateCarousel = () => {
-    viewport.scrollLeft = currentIndex * cardWidth;
+    viewport.scrollTo({ left: currentIndex * cardWidth, behavior: 'smooth' });
   };
 
   const startAutoPlay = () => {
@@ -29,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const handleResize = () => {
-    cardWidth = cards[0].offsetWidth + 15;
+    cardWidth = cards[0].offsetWidth + CARD_GAP;
     updateCarousel();
-  }
+  };
 
   nextBtn.addEventListener('click', () => {
     stopAutoPlay();
